@@ -116,5 +116,18 @@
             "name": "Kebs Recycling",
             "typesAccepted": ["Plastic", "Metal", "Glass"]      
         }
+    ],
+
+    "weeklyReport": {
+        "totalWaste": 13.5,
+    "categories": {
+      "Recyclable": 8.5,
+      "Compostable": 1,
+      "Non-Recyclable": 4
+    },
+    "suggestions": [
+      "Aim to reduce non-recyclable waste by considering reusable alternatives.",
+      "Look for local clothing donations or textile recycling centers."
     ]
+    }
 }
