@@ -129,5 +129,28 @@
       "Aim to reduce non-recyclable waste by considering reusable alternatives.",
       "Look for local clothing donations or textile recycling centers."
     ]
-    }
+    },
+
+    "ecoTips": [
+        {
+            "id": 1,
+            "tip": "Use reusable bags to reduce plastic waste."      
+        },
+        {
+            "id": 2,
+            "tip": "Start composting organic waste at home."      
+        },
+        {
+            "id": 3,
+            "tip": "Opt for digital receipts instead of paper ones."      
+        },
+        {
+            "id": 4,
+            "tip": "Use natural cleaners to reduce chemical waste."      
+        },
+        {
+            "id": 5,
+            "tip": "Consider reducing food waste by buying only what you need."      
+        }
+    ]
 }
