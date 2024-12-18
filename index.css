@@ -48,3 +48,14 @@ body {
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
  }
+ .section h2 {
+   margin-bottom: 1rem;
+   color: #2e8b57;
+   font-size: 1.8rem;
+   font-weight: bold;
+ }
+ .section img {
+   display: block;
+   margin: 1rem auto;
+ }
+ 
