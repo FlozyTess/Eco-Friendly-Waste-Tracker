@@ -34,7 +34,27 @@
       
         },
         {
-            
+            "id": 4,
+            "date": "2024-12-16",
+            "type": "Electronics",
+            "amount": 1,
+            "category": "Non-Recyclable",
+            "suggestions": [
+              "Donate working electronics to charity.",
+              "Research e-waste recycling options."
+            ]      
+        },
+        {
+            "id": 5,
+            "date": "2024-12-16",
+            "type": "Paper",
+            "amount": 3,
+            "category": "Recyclable",
+            "suggestions": [
+              "Recycle paper at local centers.",
+              "Consider switching to digital alternatives to reduce paper waste."
+            ]
+      
         }
     ] 
 }
