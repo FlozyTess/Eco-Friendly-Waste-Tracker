@@ -55,6 +55,43 @@
               "Consider switching to digital alternatives to reduce paper waste."
             ]
       
+        },
+        {
+            "id": 6,
+            "date": "2024-12-16",
+            "type": "Clothing",
+            "amount": 2,
+            "category": "Non-Recyclable",
+            "suggestions": [
+              "Donate clothes you no longer need.",
+              "Research textile recycling options."
+            ]
+      
+        },
+        {
+            "id": 7,
+            "date": "2024-12-16",
+            "type": "Metal",
+            "amount": 1.5,
+            "category": "Recyclable",
+            "suggestions": [
+              "Separate metals from other waste and take them to recycling centers.",
+              "Consider buying products made from recycled metals."
+            ]
+      
+        },
+        {
+            "id": 8,
+            "date": "2024-12-16",
+            "type": "Batteries",
+            "amount": 0.5,
+            "category": "Non-Recyclable",
+            "suggestions": [
+              "Look for local battery disposal centers.",
+              "Switch to rechargeable batteries to reduce waste."
+            ]
+      
         }
     ] 
+    
 }
