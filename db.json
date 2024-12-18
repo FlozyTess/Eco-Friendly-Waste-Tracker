@@ -92,6 +92,29 @@
             ]
       
         }
-    ] 
-    
+    ],
+
+    "recyclingCenters": [
+        {
+            "id": 1,
+            "name": "TakaTaka Solutions",
+            "typesAccepted": ["Plastic", "E-waste", "Paper", "Metal"]
+        },
+        {
+            "id": 2,
+      "name": "Kenya Association of Waste Recyclers (KAWT)",
+      "typesAccepted": ["Plastic", "Paper", "Metal", "Textiles"]
+
+        },
+        {
+            "id": 3,
+            "name": "Bin There Dump That",
+            "typesAccepted": ["Plastic", "Electronics", "Batteries"]      
+        },
+        {
+            "id": 4,
+            "name": "Kebs Recycling",
+            "typesAccepted": ["Plastic", "Metal", "Glass"]      
+        }
+    ]
 }
