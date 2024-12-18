@@ -1,0 +1,40 @@
+{
+    "wasteLogs": [
+        {
+          "id": 1,
+          
+      "date": "2024-12-16",
+      "type": "Plastic",
+      "amount": 2,
+      "category": "Recyclable",
+      "suggestions":["Try using reusable plastic containers.",
+        "Find nearby recycling centers for plastic recycling."
+      ]
+        },
+        {
+            "id": 2,
+            "date": "2024-12-16",
+            "amount": 1,
+            "category": "Compostable",
+            "suggestions":["Start composting food scraps at home.",
+               "Consider portion control to reduce waste."
+          ]
+
+        },
+        {
+            "id": 3,
+            "date": "2024-12-16",
+            "type": "Glass",
+            "amount": 0.5,
+            "category": "Recyclable",
+            "suggestions": [
+              "Glass can be recycled indefinitely. Separate it from other waste.",
+              "Look for glass recycling centers nearby."
+            ]
+      
+        },
+        {
+            
+        }
+    ] 
+}
