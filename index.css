@@ -7,11 +7,44 @@ body {
 /* Header and Navbar */
 .navbar {
    background-color: #056b56;
-   color: white;
+   color: forestgreen;
    padding: 1rem 2rem;
    display: flex;
    justify-content: space-between;
    align-items: center;
-   position: sticky;
+   
+ }
+ header h1 {
+   display: flex;
+   text-align: center;
+   align-items: center;
+   gap: 1rem;
+   font-size: 1.8rem;
+   font-weight: bold;
+ }
+ .nav-links {
+   list-style: none;
+   display: flex;
+   gap: 1.5rem;
  }
  
+ .nav-links a {
+   text-decoration: none;
+   color: forestgreen;
+   font-size: 1rem;
+   font-weight: bold;
+   transition: color 0.3s ease;
+ }
+ 
+ .nav-links a:hover {
+   color: aqua;
+ }
+ /* Sections */
+.section {
+   padding: 2rem;
+   margin: 1.5rem auto;
+   max-width: 1200px;
+   background: white;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
