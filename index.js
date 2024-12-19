@@ -11,3 +11,18 @@ let wasteLogs = []; // Stores waste logs
 // Event Listener for Logging Waste
 wasteForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    // Input Validation
+    const type = typeInput.value;
+    const amount = parseFloat(amountInput.value);
+    if (!type || isNaN(amount) || amount <= 0) {
+        alert("Please enter valid waste type and amount.");
+        return;
+    }
+    // Log Waste Entry
+    const logEntry = {
+        id: wasteLogs.length + 1,
+        date: new Date().toISOString().split("T")[0],
+        type,
+        amount,
+        category: categorizeWaste(type),
+    };
