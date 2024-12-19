@@ -1,0 +1,11 @@
+// DOM Elements
+const wasteForm = document.getElementById("waste-form");
+const typeInput = document.getElementById("type");
+const amountInput = document.getElementById("amount");
+const logOutput = document.getElementById("log-output");
+const reportSummary = document.getElementById("report-summary");
+const tipsContainer = document.getElementById("tips-container");
+const centersList = document.getElementById("centers-list");
+// Data Storage
+let wasteLogs = []; // Stores waste logs
+
