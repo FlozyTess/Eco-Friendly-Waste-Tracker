@@ -16,6 +16,7 @@ body {
  }
  header h1 {
    display: flex;
+   color: forestgreen;
    text-align: center;
    align-items: center;
    gap: 1rem;
@@ -50,7 +51,7 @@ body {
  }
  .section h2 {
    margin-bottom: 1rem;
-   color: #2e8b57;
+   color: forestgreen;
    font-size: 1.8rem;
    font-weight: bold;
  }
