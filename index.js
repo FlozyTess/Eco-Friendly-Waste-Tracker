@@ -102,4 +102,5 @@ fetch("db.json")
 displayRecyclingCenters(data.recyclingCenters);
 })
 .catch((error) => console.error("Error loading db.json:", error));
-
+// Call Weekly Report Generator Periodically
+setInterval(generateWeeklyReport, 60000); // Update every minute
