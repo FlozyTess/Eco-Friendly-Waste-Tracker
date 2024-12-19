@@ -15,7 +15,7 @@ function fetchWasteLogs() {
         .then((response) => response.json())
         .then((data) => {
             wasteLogs = data;
-            wasteLogs.forEach(displayLog);
+            wasteLogs.forEach((log, index) => displayLog(log, index));
             generateWeeklyReport();
         })
         .catch((error) => console.error("Error fetching waste logs:", error));
@@ -107,9 +107,9 @@ function fetchEcoTips() {
 // Display Eco Tips from db.json
 function displayEcoTips(tips) {
     tipsContainer.innerHTML = "";
-    tips.forEach((tip) => {
+    tips.forEach((tip,index) => {
         const tipElement = document.createElement("p");
-        tipElement.textContent = tip;
+        tipElement.textContent = `Tip #${index + 1}: ${tip}`;
         tipsContainer.appendChild(tipElement);
     });
 }
@@ -123,11 +123,11 @@ function fetchRecyclingCenters() {
 // Display Recycling Centers from db.json
 function displayRecyclingCenters(centers) {
     centersList.innerHTML = "";
-    centers.forEach((center) => {
+    centers.forEach((center,index) => {
         const centerElement = document.createElement("div");
         centerElement.className = "center";
         centerElement.innerHTML = `
-            <h4>${center.name}</h4>
+            <h4>Center #${index + 1}:${center.name}</h4>
             <p><strong>TypesAccepted:</strong> ${center.typesAccepted.join(", ")}</p>
         `;
         centersList.appendChild(centerElement);
