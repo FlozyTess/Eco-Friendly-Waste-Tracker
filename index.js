@@ -69,4 +69,12 @@ function generateWeeklyReport() {
         <p><strong>Non-Recyclable:</strong> ${totals["Non-Recyclable"]} kg</p>
     `;
 }
-
+// Display Eco Tips from db.json
+function displayEcoTips(tips) {
+    tipsContainer.innerHTML = "";
+    tips.forEach((tip) => {
+        const tipElement = document.createElement("p");
+        tipElement.textContent = tip;
+        tipsContainer.appendChild(tipElement);
+    });
+}
