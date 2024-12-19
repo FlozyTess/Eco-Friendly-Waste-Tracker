@@ -42,3 +42,16 @@ function categorizeWaste(type) {
         ? "Compostable"
         : "Non-Recyclable";
 }
+// Display Log Entry
+function displayLog(logEntry) {
+    const logElement = document.createElement("div");
+    logElement.className = "log-entry";
+    logElement.innerHTML = `
+        <p><strong>Date:</strong> ${logEntry.date}</p>
+        <p><strong>Type:</strong> ${logEntry.type}</p>
+        <p><strong>Amount:</strong> ${logEntry.amount} kg</p>
+        <p><strong>Category:</strong> ${logEntry.category}</p>
+    `;
+    logOutput.appendChild(logElement);
+}
+
