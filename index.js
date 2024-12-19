@@ -8,4 +8,6 @@ const tipsContainer = document.getElementById("tips-container");
 const centersList = document.getElementById("centers-list");
 // Data Storage
 let wasteLogs = []; // Stores waste logs
-
+// Event Listener for Logging Waste
+wasteForm.addEventListener("submit", (event) => {
+    event.preventDefault();
