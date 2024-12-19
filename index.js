@@ -26,3 +26,9 @@ wasteForm.addEventListener("submit", (event) => {
         amount,
         category: categorizeWaste(type),
     };
+    wasteLogs.push(logEntry);
+    displayLog(logEntry);
+
+    // Clear Form
+    wasteForm.reset();
+});
