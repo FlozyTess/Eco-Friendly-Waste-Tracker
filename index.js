@@ -66,16 +66,21 @@ function categorizeWaste(type) {
         : "Non-Recyclable";
 }
 // Display Log Entry
-function displayLog(logEntry) {
+function displayLog(logEntry,index) {
     const logElement = document.createElement("div");
     logElement.className = "log-entry";
     logElement.innerHTML = `
+        <h4>Log #${index + 1}</h4>
         <p><strong>Date:</strong> ${logEntry.date}</p>
         <p><strong>Type:</strong> ${logEntry.type}</p>
         <p><strong>Amount:</strong> ${logEntry.amount} kg</p>
         <p><strong>Category:</strong> ${logEntry.category}</p>
     `;
     logOutput.appendChild(logElement);
+    const suggestions = logEntry.suggestions || ["No suggestions available"];
+suggestions.forEach((suggestion) => {
+    logElement.innerHTML += `<p><strong>Suggestion:</strong> ${suggestion}</p>`;
+});
 }
 // Generate Weekly Report
 function generateWeeklyReport() {
@@ -123,8 +128,7 @@ function displayRecyclingCenters(centers) {
         centerElement.className = "center";
         centerElement.innerHTML = `
             <h4>${center.name}</h4>
-            <p><strong>Address:</strong> ${center.address}</p>
-            <p><strong>Accepted Types:</strong> ${center.acceptedTypes.join(", ")}</p>
+            <p><strong>TypesAccepted:</strong> ${center.typesAccepted.join(", ")}</p>
         `;
         centersList.appendChild(centerElement);
     });
