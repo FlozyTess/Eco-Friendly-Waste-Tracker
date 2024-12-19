@@ -54,4 +54,10 @@ function displayLog(logEntry) {
     `;
     logOutput.appendChild(logElement);
 }
+// Generate Weekly Report
+function generateWeeklyReport() {
+    const totals = { Recyclable: 0, Compostable: 0, "Non-Recyclable": 0 };
 
+    wasteLogs.forEach((log) => {
+        totals[log.category] += log.amount;
+    });
