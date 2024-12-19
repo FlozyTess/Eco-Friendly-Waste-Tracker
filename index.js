@@ -98,4 +98,8 @@ fetch("db.json")
     .then((data) => {
         // Display Eco Tips
         displayEcoTips(data.ecoTips.map((tipObj) => tipObj.tip));
+// Display Recycling Centers
+displayRecyclingCenters(data.recyclingCenters);
+})
+.catch((error) => console.error("Error loading db.json:", error));
 
