@@ -92,3 +92,10 @@ function displayRecyclingCenters(centers) {
         centersList.appendChild(centerElement);
     });
 }
+// Integration with db.json (Simulated)
+fetch("db.json")
+    .then((response) => response.json())
+    .then((data) => {
+        // Display Eco Tips
+        displayEcoTips(data.ecoTips.map((tipObj) => tipObj.tip));
+
