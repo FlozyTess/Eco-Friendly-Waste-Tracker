@@ -32,3 +32,13 @@ wasteForm.addEventListener("submit", (event) => {
     // Clear Form
     wasteForm.reset();
 });
+// Categorize Waste Based on Type
+function categorizeWaste(type) {
+    const recyclable = ["Plastic", "Glass", "Paper", "Metal"];
+    const compostable = ["Food Waste"];
+    return recyclable.includes(type)
+        ? "Recyclable"
+        : compostable.includes(type)
+        ? "Compostable"
+        : "Non-Recyclable";
+}
