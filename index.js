@@ -61,3 +61,12 @@ function generateWeeklyReport() {
     wasteLogs.forEach((log) => {
         totals[log.category] += log.amount;
     });
+    // Update Report Summary
+    reportSummary.innerHTML = `
+        <h3>Weekly Waste Report</h3>
+        <p><strong>Recyclable:</strong> ${totals.Recyclable} kg</p>
+        <p><strong>Compostable:</strong> ${totals.Compostable} kg</p>
+        <p><strong>Non-Recyclable:</strong> ${totals["Non-Recyclable"]} kg</p>
+    `;
+}
+
