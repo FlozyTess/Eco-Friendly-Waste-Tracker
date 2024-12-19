@@ -6,8 +6,21 @@ const logOutput = document.getElementById("log-output");
 const reportSummary = document.getElementById("report-summary");
 const tipsContainer = document.getElementById("tips-container");
 const centersList = document.getElementById("centers-list");
-// Data Storage
-let wasteLogs = []; // Stores waste logs
+// Base URL for JSON Server
+const BASE_URL = "http://localhost:3000";
+
+// Fetch Waste Logs from Server
+function fetchWasteLogs() {
+    fetch(`${BASE_URL}/wasteLogs`)
+        .then((response) => response.json())
+        .then((data) => {
+            wasteLogs = data;
+            wasteLogs.forEach(displayLog);
+            generateWeeklyReport();
+        })
+        .catch((error) => console.error("Error fetching waste logs:", error));
+}
+
 // Event Listener for Logging Waste
 wasteForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -26,12 +39,22 @@ wasteForm.addEventListener("submit", (event) => {
         amount,
         category: categorizeWaste(type),
     };
-    wasteLogs.push(logEntry);
-    displayLog(logEntry);
-
-    // Clear Form
-    wasteForm.reset();
+    // Post new log entry to server
+    fetch(`${BASE_URL}/wasteLogs`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(logEntry),
+    })
+        .then((response) => response.json())
+        .then((newLog) => {
+            displayLog(newLog);
+            wasteLogs.push(newLog);
+            generateWeeklyReport();
+            wasteForm.reset();
+        })
+        .catch((error) => console.error("Error logging waste:", error));
 });
+
 // Categorize Waste Based on Type
 function categorizeWaste(type) {
     const recyclable = ["Plastic", "Glass", "Paper", "Metal"];
@@ -69,6 +92,13 @@ function generateWeeklyReport() {
         <p><strong>Non-Recyclable:</strong> ${totals["Non-Recyclable"]} kg</p>
     `;
 }
+// Fetch Eco Tips
+function fetchEcoTips() {
+    fetch(`${BASE_URL}/ecoTips`)
+        .then((response) => response.json())
+        .then((tips) => displayEcoTips(tips.map((tip) => tip.tip)))
+        .catch((error) => console.error("Error fetching eco tips:", error));
+}
 // Display Eco Tips from db.json
 function displayEcoTips(tips) {
     tipsContainer.innerHTML = "";
@@ -77,6 +107,13 @@ function displayEcoTips(tips) {
         tipElement.textContent = tip;
         tipsContainer.appendChild(tipElement);
     });
+}
+// Fetch Recycling Centers
+function fetchRecyclingCenters() {
+    fetch(`${BASE_URL}/recyclingCenters`)
+        .then((response) => response.json())
+        .then((centers) => displayRecyclingCenters(centers))
+        .catch((error) => console.error("Error fetching recycling centers:", error));
 }
 // Display Recycling Centers from db.json
 function displayRecyclingCenters(centers) {
@@ -92,15 +129,12 @@ function displayRecyclingCenters(centers) {
         centersList.appendChild(centerElement);
     });
 }
-// Integration with db.json (Simulated)
-fetch("db.json")
-    .then((response) => response.json())
-    .then((data) => {
-        // Display Eco Tips
-        displayEcoTips(data.ecoTips.map((tipObj) => tipObj.tip));
-// Display Recycling Centers
-displayRecyclingCenters(data.recyclingCenters);
-})
-.catch((error) => console.error("Error loading db.json:", error));
-// Call Weekly Report Generator Periodically
-setInterval(generateWeeklyReport, 60000); // Update every minute
+// Initialize App
+function init() {
+    fetchWasteLogs();
+    fetchEcoTips();
+    fetchRecyclingCenters();
+    setInterval(generateWeeklyReport, 60000); // Update report every minute
+}
+
+init();
