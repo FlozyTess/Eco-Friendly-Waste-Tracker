@@ -78,3 +78,17 @@ function displayEcoTips(tips) {
         tipsContainer.appendChild(tipElement);
     });
 }
+// Display Recycling Centers from db.json
+function displayRecyclingCenters(centers) {
+    centersList.innerHTML = "";
+    centers.forEach((center) => {
+        const centerElement = document.createElement("div");
+        centerElement.className = "center";
+        centerElement.innerHTML = `
+            <h4>${center.name}</h4>
+            <p><strong>Address:</strong> ${center.address}</p>
+            <p><strong>Accepted Types:</strong> ${center.acceptedTypes.join(", ")}</p>
+        `;
+        centersList.appendChild(centerElement);
+    });
+}
