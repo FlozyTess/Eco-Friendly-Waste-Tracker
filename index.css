@@ -105,4 +105,15 @@ body {
  
  .card p {
    color: #4f4f4f;
- } 
+ }
+ /* Footer */
+footer {
+   background: #2f4f4f;
+   color: white;
+   text-align: center;
+   padding: 1rem;
+   font-size: 0.9rem;
+   margin-top: 2rem;
+ }
+ 
+  
