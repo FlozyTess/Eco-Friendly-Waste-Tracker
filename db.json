@@ -104,6 +104,20 @@
       "type": "Food Waste",
       "amount": 7,
       "category": "Compostable"
+    },
+    {
+      "id": 15,
+      "date": "2024-12-20",
+      "type": "Food Waste",
+      "amount": 7,
+      "category": "Compostable"
+    },
+    {
+      "id": 15,
+      "date": "2024-12-20",
+      "type": "Food Waste",
+      "amount": 7,
+      "category": "Compostable"
     }
   ],
   "weeklyReport": {
