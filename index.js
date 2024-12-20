@@ -57,25 +57,6 @@ wasteForm.addEventListener("submit", (event) => {
         })
         .catch((error) => console.error("Error logging waste:", error));
 });
-// Event Listener for Delete All Logs Button
-deleteAllButton.addEventListener("click", () => {
-    if (!confirm("Are you sure you want to delete all logs?")) return;
-
-    // Delete logs one by one
-    const deletePromises = wasteLogs.map((log) =>
-        fetch(`${BASE_URL}/wasteLogs/${log.id}`, { method: "DELETE" })
-    );
-
-    // Wait for all deletions to complete
-    Promise.all(deletePromises)
-        .then(() => {
-            alert("All logs deleted successfully.");
-            wasteLogs = [];
-            logOutput.innerHTML = "";
-            generateWeeklyReport();
-        })
-        .catch((error) => console.error("Error deleting all logs:", error));
-});
 
 // Categorize Waste Based on Type
 function categorizeWaste(type) {
@@ -107,6 +88,23 @@ function displayLog(logEntry,index) {
     });
 
     logOutput.appendChild(logElement);
+}
+    
+function deleteLog(id, logElement) {
+    fetch(`${BASE_URL}/wasteLogs/${id}`, {
+        method: "DELETE",
+    })
+        .then((response) => {
+            if (response.ok) {
+                logElement.remove(); // Remove log from DOM
+                alert("Log deleted successfully.");
+                generateWeeklyReport(); // Optionally refresh the weekly report
+            } else {
+                alert("Failed to delete log. Please try again.");
+            }
+        })
+        .catch((error) => console.error("Error deleting log:", error));
+
 }
 
 // Generate Weekly Report
