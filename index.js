@@ -80,12 +80,17 @@ function displayLog(logEntry,index) {
     
     logOutput.appendChild(logElement);
     const suggestions = logEntry.suggestions || ["No suggestions available"];
-suggestions.forEach((suggestion) => {
+    suggestions.forEach((suggestion) => {
     logElement.innerHTML += `<p><strong>Suggestion:</strong> ${suggestion}</p>`;
-     // Add event listener to delete button
-     const deleteButton = logElement.querySelector(".delete-button");
-     deleteButton.addEventListener("click", () => deleteLog(logEntry.id, logElement));
-});
+    });
+
+    logOutput.appendChild(logElement);
+    
+    // Add event listener to delete button
+    const deleteButton = logElement.querySelector(".delete-button");
+    deleteButton.addEventListener("click", () => deleteLog(logEntry.id, logElement));
+}
+ 
 function deleteLog(id, logElement) {
     fetch(`${BASE_URL}/wasteLogs/${id}`, {
         method: "DELETE",
@@ -94,15 +99,15 @@ function deleteLog(id, logElement) {
             if (response.ok) {
                 logElement.remove(); // Remove log from DOM
                 alert("Log deleted successfully.");
-                // Optionally refresh the weekly report
-                generateWeeklyReport();
+                generateWeeklyReport(); // Optionally refresh the weekly report
             } else {
                 alert("Failed to delete log. Please try again.");
             }
         })
         .catch((error) => console.error("Error deleting log:", error));
-}    
+
 }
+
 // Generate Weekly Report
 function generateWeeklyReport() {
     const totals = { Recyclable: 0, Compostable: 0, "Non-Recyclable": 0 };
