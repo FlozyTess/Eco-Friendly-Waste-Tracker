@@ -75,13 +75,12 @@ function displayLog(logEntry,index) {
         <p><strong>Type:</strong> ${logEntry.type}</p>
         <p><strong>Amount:</strong> ${logEntry.amount} kg</p>
         <p><strong>Category:</strong> ${logEntry.category}</p>
-        <p><strong>Suggestion:</strong> ${suggestion}</p>
         <button class="delete-button" data-id="${logEntry.id}">Delete</button>
     `;
     logOutput.appendChild(logElement);
     const suggestions = logEntry.suggestions || ["No suggestions available"];
 suggestions.forEach((suggestion) => {
-    logElement.innerHTML += ``;
+    logElement.innerHTML += `<p><strong>Suggestion:</strong> ${suggestion}</p>`;
      // Add event listener to delete button
      const deleteButton = logElement.querySelector(".delete-button");
      deleteButton.addEventListener("click", () => deleteLog(logEntry.id, logElement));

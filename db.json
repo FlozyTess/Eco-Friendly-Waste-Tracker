@@ -1,93 +1,6 @@
 {
   "wasteLogs": [
     {
-      "id": "1",
-      "date": "2024-12-16",
-      "type": "Plastic",
-      "amount": 2,
-      "category": "Recyclable",
-      "suggestions": [
-        "Try using reusable plastic containers.",
-        "Find nearby recycling centers for plastic recycling."
-      ]
-    },
-    {
-      "id": "2",
-      "date": "2024-12-16",
-      "amount": 1,
-      "category": "Compostable",
-      "suggestions": [
-        "Start composting food scraps at home.",
-        "Consider portion control to reduce waste."
-      ]
-    },
-    {
-      "id": "3",
-      "date": "2024-12-16",
-      "type": "Glass",
-      "amount": 0.5,
-      "category": "Recyclable",
-      "suggestions": [
-        "Glass can be recycled indefinitely. Separate it from other waste.",
-        "Look for glass recycling centers nearby."
-      ]
-    },
-    {
-      "id": "4",
-      "date": "2024-12-16",
-      "type": "Electronics",
-      "amount": 1,
-      "category": "Non-Recyclable",
-      "suggestions": [
-        "Donate working electronics to charity.",
-        "Research e-waste recycling options."
-      ]
-    },
-    {
-      "id": "5",
-      "date": "2024-12-16",
-      "type": "Paper",
-      "amount": 3,
-      "category": "Recyclable",
-      "suggestions": [
-        "Recycle paper at local centers.",
-        "Consider switching to digital alternatives to reduce paper waste."
-      ]
-    },
-    {
-      "id": "6",
-      "date": "2024-12-16",
-      "type": "Clothing",
-      "amount": 2,
-      "category": "Non-Recyclable",
-      "suggestions": [
-        "Donate clothes you no longer need.",
-        "Research textile recycling options."
-      ]
-    },
-    {
-      "id": "7",
-      "date": "2024-12-16",
-      "type": "Metal",
-      "amount": 1.5,
-      "category": "Recyclable",
-      "suggestions": [
-        "Separate metals from other waste and take them to recycling centers.",
-        "Consider buying products made from recycled metals."
-      ]
-    },
-    {
-      "id": "8",
-      "date": "2024-12-16",
-      "type": "Batteries",
-      "amount": 0.5,
-      "category": "Non-Recyclable",
-      "suggestions": [
-        "Look for local battery disposal centers.",
-        "Switch to rechargeable batteries to reduce waste."
-      ]
-    },
-    {
       "id": 9,
       "date": "2024-12-19",
       "type": "Glass",
@@ -100,6 +13,97 @@
       "type": "Clothing",
       "amount": 5,
       "category": "Non-Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 11,
+      "date": "2024-12-20",
+      "type": "Paper",
+      "amount": 1,
+      "category": "Recyclable"
+    },
+    {
+      "id": 20,
+      "date": "2024-12-20",
+      "type": "Plastic",
+      "amount": 2,
+      "category": "Recyclable"
+    },
+    {
+      "id": 20,
+      "date": "2024-12-20",
+      "type": "Plastic",
+      "amount": 2,
+      "category": "Recyclable"
+    },
+    {
+      "id": 22,
+      "date": "2024-12-20",
+      "type": "Food Waste",
+      "amount": 5,
+      "category": "Compostable"
+    },
+    {
+      "id": 15,
+      "date": "2024-12-20",
+      "type": "Food Waste",
+      "amount": 7,
+      "category": "Compostable"
     }
   ],
   "weeklyReport": {
