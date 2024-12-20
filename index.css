@@ -100,7 +100,7 @@ body {
  }
  
  .card h3 {
-   color: #2e8b57;
+   color: forestgreen;
  }
  
  .card p {
@@ -122,11 +122,11 @@ body {
 
  /* Footer */
 footer {
-   background: #2f4f4f;
-   color: white;
+   background: #1E3A5F;
+   color: forestgreen;
    text-align: center;
    padding: 1rem;
-   font-size: 0.9rem;
+   font-size: 1.0rem;
    margin-top: 2rem;
  }
  
