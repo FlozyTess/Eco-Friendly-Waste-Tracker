@@ -6,8 +6,11 @@ const logOutput = document.getElementById("log-output");
 const reportSummary = document.getElementById("report-summary");
 const tipsContainer = document.getElementById("tips-container");
 const centersList = document.getElementById("centers-list");
+const deleteAllButton = document.getElementById("delete-all-button");
 // Base URL for JSON Server
 const BASE_URL = "http://localhost:3000";
+
+let wasteLogs = []; 
 
 // Fetch Waste Logs from Server
 function fetchWasteLogs() {
@@ -54,6 +57,25 @@ wasteForm.addEventListener("submit", (event) => {
         })
         .catch((error) => console.error("Error logging waste:", error));
 });
+// Event Listener for Delete All Logs Button
+deleteAllButton.addEventListener("click", () => {
+    if (!confirm("Are you sure you want to delete all logs?")) return;
+
+    // Delete logs one by one
+    const deletePromises = wasteLogs.map((log) =>
+        fetch(`${BASE_URL}/wasteLogs/${log.id}`, { method: "DELETE" })
+    );
+
+    // Wait for all deletions to complete
+    Promise.all(deletePromises)
+        .then(() => {
+            alert("All logs deleted successfully.");
+            wasteLogs = [];
+            logOutput.innerHTML = "";
+            generateWeeklyReport();
+        })
+        .catch((error) => console.error("Error deleting all logs:", error));
+});
 
 // Categorize Waste Based on Type
 function categorizeWaste(type) {
@@ -75,7 +97,7 @@ function displayLog(logEntry,index) {
         <p><strong>Type:</strong> ${logEntry.type}</p>
         <p><strong>Amount:</strong> ${logEntry.amount} kg</p>
         <p><strong>Category:</strong> ${logEntry.category}</p>
-        <button class="delete-button" data-id="${logEntry.id}">Delete</button>
+        
     `;
     
     logOutput.appendChild(logElement);
@@ -85,27 +107,6 @@ function displayLog(logEntry,index) {
     });
 
     logOutput.appendChild(logElement);
-    
-    // Add event listener to delete button
-    const deleteButton = logElement.querySelector(".delete-button");
-    deleteButton.addEventListener("click", () => deleteLog(logEntry.id, logElement));
-}
- 
-function deleteLog(id, logElement) {
-    fetch(`${BASE_URL}/wasteLogs/${id}`, {
-        method: "DELETE",
-    })
-        .then((response) => {
-            if (response.ok) {
-                logElement.remove(); // Remove log from DOM
-                alert("Log deleted successfully.");
-                generateWeeklyReport(); // Optionally refresh the weekly report
-            } else {
-                alert("Failed to delete log. Please try again.");
-            }
-        })
-        .catch((error) => console.error("Error deleting log:", error));
-
 }
 
 // Generate Weekly Report
@@ -166,5 +167,16 @@ function init() {
     fetchRecyclingCenters();
     setInterval(generateWeeklyReport, 60000); // Update report every minute
 }
+fetch(`${BASE_URL}/wasteLogs`, { method: "DELETE" })
+    .then((response) => {
+        if (response.ok) {
+            alert("All logs deleted successfully.");
+            logOutput.innerHTML = "";
+            generateWeeklyReport();
+        } else {
+            alert("Failed to delete all logs.");
+        }
+    })
+    .catch((error) => console.error("Error deleting all logs:", error));
 
 init();
