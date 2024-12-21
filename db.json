@@ -94,6 +94,27 @@
       "type": "Food Waste",
       "amount": 4,
       "category": "Compostable"
+    },
+    {
+      "id": 10,
+      "date": "2024-12-20",
+      "type": "Electronics",
+      "amount": 2,
+      "category": "Non-Recyclable"
+    },
+    {
+      "id": 10,
+      "date": "2024-12-20",
+      "type": "Electronics",
+      "amount": 2,
+      "category": "Non-Recyclable"
+    },
+    {
+      "id": 12,
+      "date": "2024-12-20",
+      "type": "Electronics",
+      "amount": 2,
+      "category": "Non-Recyclable"
     }
   ],
   "recyclingCenters": [
