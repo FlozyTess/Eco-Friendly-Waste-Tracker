@@ -89,23 +89,6 @@ function displayLog(logEntry,index) {
 
     logOutput.appendChild(logElement);
 }
-    
-function deleteLog(id, logElement) {
-    fetch(`${BASE_URL}/wasteLogs/${id}`, {
-        method: "DELETE",
-    })
-        .then((response) => {
-            if (response.ok) {
-                logElement.remove(); // Remove log from DOM
-                alert("Log deleted successfully.");
-                generateWeeklyReport(); // Optionally refresh the weekly report
-            } else {
-                alert("Failed to delete log. Please try again.");
-            }
-        })
-        .catch((error) => console.error("Error deleting log:", error));
-
-}
 
 // Generate Weekly Report
 function generateWeeklyReport() {
@@ -165,16 +148,5 @@ function init() {
     fetchRecyclingCenters();
     setInterval(generateWeeklyReport, 60000); // Update report every minute
 }
-fetch(`${BASE_URL}/wasteLogs`, { method: "DELETE" })
-    .then((response) => {
-        if (response.ok) {
-            alert("All logs deleted successfully.");
-            logOutput.innerHTML = "";
-            generateWeeklyReport();
-        } else {
-            alert("Failed to delete all logs.");
-        }
-    })
-    .catch((error) => console.error("Error deleting all logs:", error));
 
 init();
