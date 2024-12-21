@@ -39,3 +39,8 @@ This web application helps users track their daily waste, categorize it into rec
    ```
 
 4. Open `index.html` in your browser to use the application.
+## Usage
+1. Log your waste by filling out the form with type and amount.
+2. View your waste logs and their respective categories.
+3. Check eco-friendly tips and nearby recycling centers for guidance.
+4. Review the weekly report to understand your waste habits.
