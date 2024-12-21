@@ -44,3 +44,15 @@ This web application helps users track their daily waste, categorize it into rec
 2. View your waste logs and their respective categories.
 3. Check eco-friendly tips and nearby recycling centers for guidance.
 4. Review the weekly report to understand your waste habits.
+## API Endpoints
+The application uses the following endpoints from the JSON Server:
+- **Waste Logs:**
+  - `GET /wasteLogs` - Fetch all waste logs
+  - `POST /wasteLogs` - Add a new waste log
+  - `DELETE /wasteLogs/:id` - Delete a specific waste log
+
+- **Eco Tips:**
+  - `GET /ecoTips` - Fetch eco-friendly tips
+
+- **Recycling Centers:**
+  - `GET /recyclingCenters` - Fetch nearby recycling centers
