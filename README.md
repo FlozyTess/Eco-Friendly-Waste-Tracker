@@ -56,3 +56,8 @@ The application uses the following endpoints from the JSON Server:
 
 - **Recycling Centers:**
   - `GET /recyclingCenters` - Fetch nearby recycling centers
+## Contributing
+Contributions are welcome! If you have ideas or improvements, feel free to submit a pull request or open an issue.
+
+## License
+This project is licensed under the MIT License.
